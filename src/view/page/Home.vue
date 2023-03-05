@@ -34,6 +34,8 @@
     <div class="text-center">
       <v-pagination v-model="page" :length="pageCount"></v-pagination>
     </div>
+
+    <p></p>
   </div>
 </template>
 
@@ -63,8 +65,8 @@ export default {
     }
   },
   methods: {
-    goBoardDetail() {
-      alert("hello!");
+    goBoardDetail(value) {
+      alert(value.title + " 클릭하셨습니다.");
     }
   }
 }
