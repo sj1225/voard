@@ -38,40 +38,36 @@
 </template>
 
 <script>
-  export default {
-    data () {
-      return {
-        page: 1,
-        pageCount: 0,
-        itemsPerPage: 10,
-        search: '',
-        headers: [
-          {
-            text: '번호',
-            align: 'start',
-            value: 'num',
-          },
-          { text: '제목', value: 'title' },
-          { text: '작성자', value: 'writer' },
-          { text: '작성일시', value: 'writedate' },
-        ],
+import desserts_data from '@/desserts_data'
 
-        desserts: [
-          {
-            num: 1,
-            title: "게시글1",
-            writer: "작성자1",
-            writedate: "2023-03-05 03:13",
-          },
-        ],
-      }
-    },
-    methods: {
-      goBoardDetail() {
-        alert("hello!");
-      }
+export default {
+  data () {
+    return {
+      page: 1,
+      pageCount: 0,
+      itemsPerPage: 10,
+      search: '',
+
+      headers: [
+        {
+          text: '번호',
+          align: 'start',
+          value: 'num',
+        },
+        { text: '제목', value: 'title' },
+        { text: '작성자', value: 'writer' },
+        { text: '작성일시', value: 'writedate' },
+      ],
+
+      desserts: desserts_data,
+    }
+  },
+  methods: {
+    goBoardDetail() {
+      alert("hello!");
     }
   }
+}
 </script>
 
 <style lang="css" scoped>
