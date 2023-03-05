@@ -1,33 +1,40 @@
 <template>
-  <div>
-    <v-card>
+  <div id="home">
+    <!-- 페이지 제목 -->
     <v-toolbar flat>
       <v-toolbar-title>전체 게시글</v-toolbar-title>
       <v-spacer></v-spacer>
+      <v-text-field
+        v-model="search"
+        append-icon="mdi-magnify"
+        label="Search"
+        single-line
+        hide-details
+      ></v-text-field>
     </v-toolbar>
-    <v-card-text class="grey lighten-4">
-        <v-card>
 
+    <!-- 목록 -->
     <v-data-table
+      class="row-pointer"
       :headers="headers"
       :items="desserts"
+      :page.sync="page"
+      :items-per-page="itemsPerPage"
+      :search="search"
       hide-default-footer
-      
+      disable-filtering
+      disable-sort
+      @page-count="pageCount = $event"
+      @click:row="goBoardDetail"
     ></v-data-table>
-    <div class="text-center">
-    <v-pagination
-      v-model="page"
-      :length="4"
-      circle
-    ></v-pagination>
-  </div>
-  </v-card>
-    </v-card-text>
-    
-  </v-card>
 
+    <p></p>
+
+    <!-- 페이지네이션 -->
+    <div class="text-center">
+      <v-pagination v-model="page" :length="pageCount"></v-pagination>
+    </div>
   </div>
-  
 </template>
 
 <script>
@@ -35,6 +42,9 @@
     data () {
       return {
         page: 1,
+        pageCount: 0,
+        itemsPerPage: 10,
+        search: '',
         headers: [
           {
             text: '번호',
@@ -45,6 +55,7 @@
           { text: '작성자', value: 'writer' },
           { text: '작성일시', value: 'writedate' },
         ],
+
         desserts: [
           {
             num: 1,
@@ -55,5 +66,16 @@
         ],
       }
     },
+    methods: {
+      goBoardDetail() {
+        alert("hello!");
+      }
+    }
   }
 </script>
+
+<style lang="css" scoped>
+  .row-pointer >>> tbody tr :hover {
+    cursor: pointer;
+  }
+</style>

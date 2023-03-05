@@ -13,9 +13,10 @@ import Header from '@/view/component/Header.vue'
 import Footer from '@/view/component/Footer.vue'
 
 export default {
-    components: {
-        Header,
-        Footer,
-    }
+  name: "LayoutDefault",
+  components: {
+    Header,
+    Footer,
+  },
 }
 </script>
