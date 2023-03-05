@@ -66,8 +66,17 @@ export default {
   },
   methods: {
     goBoardDetail(value) {
-      alert(value.title + " 클릭하셨습니다.");
-    }
+      console.log(value);
+      this.$router.push({
+        name:"detail",
+        params: { num: value.num,
+                  title: value.title,
+                  writer: value.writer,
+                  writedate: value.writedate,
+                  content: value.content,
+                },
+      });
+    },
   }
 }
 </script>
