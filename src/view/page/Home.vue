@@ -34,8 +34,6 @@
     <div class="text-center">
       <v-pagination v-model="page" :length="pageCount"></v-pagination>
     </div>
-
-    <p></p>
   </div>
 </template>
 
