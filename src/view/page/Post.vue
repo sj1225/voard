@@ -11,6 +11,8 @@
     작성자 <v-text-field></v-text-field>
     게시일시 <v-text-field></v-text-field>
     본문 <v-textarea></v-textarea>
+
+    <v-btn @click="insert()">작성하기</v-btn>
     <p></p>
   </div>
 </template>
@@ -24,6 +26,9 @@ export default {
     },
 
     methods: {
+      insert() {
+        alert("summit");
+      }
     }
 }
 </script>
