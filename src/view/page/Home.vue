@@ -26,9 +26,8 @@
       disable-sort
       @page-count="pageCount = $event"
       @click:row="goBoardDetail"
+      style="padding-bottom:10px"
     ></v-data-table>
-
-    <p></p>
 
     <!-- 페이지네이션 -->
     <div class="text-center">
@@ -43,11 +42,12 @@ import desserts_data from '@/desserts_data'
 export default {
   data () {
     return {
-      page: 1,
+      page: 1,          // 선택한 페이지 번호
       pageCount: 0,
-      itemsPerPage: 10,
-      search: '',
+      itemsPerPage: 10,  // 화면 당 보여줄 항목 개수
+      search: '',       // 검색어
 
+      // 헤더 정보
       headers: [
         {
           text: '번호',
