@@ -29,6 +29,17 @@ const routes = [
                 name: 'post',
                 component: ()=> import('@/view/page/Post.vue'),
             },
+
+
+            {
+                path: '/notFound',
+                name: 'notFound',
+                component: ()=> import('@/view/page/notFound.vue'),
+            },
+            {
+                path: '/:pathMatch(.*)',
+                redirect: '/notFound',
+            },
         ]
     },
 ]
