@@ -67,11 +67,7 @@ export default {
       console.log(value);
       this.$router.push({
         name:"detail",
-        params: { num: value.num,
-                  title: value.title,
-                  writer: value.writer,
-                  writedate: value.writedate,
-                  content: value.content,
+        params: { brd_id : value.num
                 },
       });
     },

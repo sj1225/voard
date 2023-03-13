@@ -6,15 +6,7 @@ module.exports = defineConfig({
 
   // npm run serve 개발 진행시에 포트가 다르기때문에 프록시 설정
   devServer: {
-    overlay: false,
-        historyApiFallback: true,
-        proxy: {
-            '/': {
-                target: 'http://localhost:8080/',
-                changeOrigin: true,
-                secure: false
-            }
-        }
+    proxy: 'http://localhost:8080'
   },
 
   transpileDependencies: [

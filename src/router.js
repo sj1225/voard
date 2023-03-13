@@ -11,8 +11,7 @@ const routes = [
         children: [
             {
                 path: '/',
-                name: 'home',
-                component: ()=> import('@/view/page/Home.vue'),
+                redirect: 'home',
             },
             {
                 path: '/home',
@@ -20,7 +19,7 @@ const routes = [
                 component: ()=> import('@/view/page/Home.vue'),
             },
             {
-                path: '/detail',
+                path: '/detail/:brd_id',
                 name: 'detail',
                 component: ()=> import('@/view/page/Detail.vue'),
             },
